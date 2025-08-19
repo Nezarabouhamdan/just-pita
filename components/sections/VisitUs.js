@@ -166,7 +166,7 @@ const mapOptions = {
 const VisitUs = () => {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: "AIzaSyBweghhVU28Hd6rsG8RGjJNWQzBXb_MDJs",
   });
 
   return (
