@@ -1,63 +1,87 @@
+// components/sections/Menu.js
 "use client";
 import styled from "styled-components";
 import { menuData } from "@/data/menuData";
 
 const Section = styled.section`
   padding: 8rem 5%;
-  background: ${({ theme }) => theme.colors.white};
+  background-image: url("/images/parchment-texture.png"); // NEW: Add a subtle texture
+  background-size: cover;
+  background-color: ${({ theme }) => theme.colors.white};
 `;
+
 const Title = styled.h2`
   text-align: center;
   margin-bottom: 5rem;
 `;
+
 const MenuGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: 1fr;
   gap: 4rem 3.5rem;
   max-width: 1200px;
   margin: 0 auto;
-`;
-const CategoryTitle = styled.h3`
-  margin-bottom: 1.5rem;
-  border-bottom: 3px solid ${({ theme }) => theme.colors.primary};
-  padding-bottom: 0.75rem;
-  display: inline-block;
-`;
-const MenuItem = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 1.25rem;
-  &:not(:last-child) {
-    border-bottom: 1px dotted #ccc;
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr;
   }
 `;
-const ItemHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1rem;
+
+const CategoryTitle = styled.h3`
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  position: relative;
+  display: inline-block;
+
+  /* NEW: Decorative underline with classical feel */
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: ${({ theme }) => theme.colors.primary};
+  }
 `;
+
+const MenuItem = styled.div`
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 1rem;
+  align-items: center;
+  padding-bottom: 1.25rem;
+
+  &:not(:last-child) {
+    border-bottom: 1px dotted ${({ theme }) => theme.colors.primary + "55"};
+  }
+`;
+
+// ItemName and ItemDescription will be grouped
+const ItemDetails = styled.div``;
+
 const ItemName = styled.h4`
-  font-family: inherit; // It will inherit from GlobalStyles
-  font-weight: normal; // Abril Fatface is already bold
-  font-size: 1.2rem;
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-weight: 700;
+  font-size: 1.1rem;
   color: ${({ theme }) => theme.colors.text};
 `;
+
 const ItemPrice = styled.span`
-  font-family: inherit;
+  font-family: ${({ theme }) => theme.fonts.headings};
   font-weight: normal;
   font-size: 1.2rem;
   color: ${({ theme }) => theme.colors.text};
-  white-space: nowrap; // Prevents price from wrapping
 `;
+
 const ItemDescription = styled.p`
-  font-family: ${({ theme }) =>
-    theme.fonts.body}; // Explicitly set font for consistency
-  font-size: 1rem;
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: 0.95rem;
   margin: 0.25rem 0 0;
-  color: #888; // Lighter color for description
-  font-weight: normal;
+  color: ${({ theme }) => theme.colors.subtleText};
+  font-weight: 400;
   line-height: 1.5;
+  grid-column: 1 / 2; // Span across the first column
 `;
 
 const MenuCategory = ({ title, items }) => (
@@ -65,10 +89,10 @@ const MenuCategory = ({ title, items }) => (
     <CategoryTitle>{title}</CategoryTitle>
     {items.map((item) => (
       <MenuItem key={item.name}>
-        <ItemHeader>
+        <ItemDetails>
           <ItemName>{item.name}</ItemName>
-          <ItemPrice>{item.price}</ItemPrice>
-        </ItemHeader>
+        </ItemDetails>
+        <ItemPrice>{item.price}</ItemPrice>
         {item.description && (
           <ItemDescription>{item.description}</ItemDescription>
         )}
@@ -78,6 +102,7 @@ const MenuCategory = ({ title, items }) => (
 );
 
 const Menu = () => (
+  // Your Menu component JSX (no changes here)
   <Section id="menu">
     <Title>Our Menu</Title>
     <MenuGrid>
@@ -98,4 +123,5 @@ const Menu = () => (
     </MenuGrid>
   </Section>
 );
+
 export default Menu;
