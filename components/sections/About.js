@@ -121,11 +121,9 @@ const Description = styled.div`
   }
 `;
 
-// --- THE COMPONENT ---
 const VisitUs = () => {
   return (
-    // UPDATED ID from "about" to "visit" for correct navigation linking
-    <SectionContainer id="visit">
+    <SectionContainer id="about">
       <ImageSliderContainer>
         <Swiper
           modules={[Navigation, Autoplay, EffectFade]}
@@ -142,7 +140,7 @@ const VisitUs = () => {
                 src={image.src}
                 alt={image.alt}
                 fill
-                unoptimized={true}
+                unoptimized
                 style={{ objectFit: "cover" }}
                 quality={90}
               />
@@ -153,7 +151,6 @@ const VisitUs = () => {
 
       <InfoContainer>
         <InfoBlock>
-          {/* --- CONTENT UPDATED --- */}
           <Address>
             <a
               href="https://maps.google.com/?q=Carrer+d'Aribau,+86,+L'Eixample,+08036+Barcelona,+Spain"
@@ -163,26 +160,41 @@ const VisitUs = () => {
               Carrer d'Aribau, 86 - Barcelona
             </a>
             <br />
-            T. ‎+34 685 06 60 49
+            T. +34 685 06 60 49
           </Address>
         </InfoBlock>
+
         <InfoBlock>
-          {/* --- CONTENT UPDATED --- */}
+          {/* --- OPENING HOURS UPDATED --- */}
           <HoursGrid>
             <HoursRow>
-              <span>SUN–THU</span>
-              <span>12:00 – 02:30</span>
+              <DayGroup>SUNDAY - THURSDAY</DayGroup>
+              <TimeEntry>
+                <span>The Kitchen:</span>
+                <span>12:00 PM – 12:00 AM</span>
+              </TimeEntry>
+              <TimeEntry>
+                <span>The Bar:</span>
+                <span>12:00 AM – 2:30 AM</span>
+              </TimeEntry>
             </HoursRow>
+
             <HoursRow>
-              <span>FRI–SAT</span>
-              <span>12:00 – 03:00</span>
+              <DayGroup>FRIDAY & SATURDAY</DayGroup>
+              <TimeEntry>
+                <span>The Kitchen:</span>
+                <span>12:00 PM – 12:00 AM</span>
+              </TimeEntry>
+              <TimeEntry>
+                <span>The Bar:</span>
+                <span>12:00 AM – 3:00 AM</span>
+              </TimeEntry>
             </HoursRow>
           </HoursGrid>
         </InfoBlock>
 
-        {/* The "WITHOUT RESERVE" block can be kept if it's still your policy */}
         <InfoBlock>
-          <span>About Us</span>
+          <span>WITHOUT RESERVE</span>
         </InfoBlock>
 
         {/* --- "ABOUT US" CONTENT UPDATED --- */}
