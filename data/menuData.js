@@ -1,10 +1,68 @@
 export const menuData = {
-  pitas: [
-    { name: "La Falafabulosa", image: "/images/pitas/la-falafabulosa.jpeg" },
-    { name: "La Toxica", image: "/images/pitas/la-toxica.jpeg" },
-    { name: "El Pollon", image: "/images/pitas/el-pollon.jpeg" },
-    { name: "La Carnosa", image: "/images/pitas/la-carnosa.jpeg" },
+  entrantes: [
+    {
+      name: "Falafel",
+      description:
+        "(tres croquetas crujientes de garbanzo, salsa de tahini y pico de gallo)",
+      price: "4.90€",
+    },
+    {
+      name: "Las Bravas",
+      description:
+        "(crujientes dados de patata con alioli y salsa brava especial)",
+      price: "5.90€",
+    },
+    {
+      name: "Nachos con guacamole",
+      description: "(totopos de maíz con guacamoli casero y pico de gallo)",
+      price: "8.90€",
+    },
+    {
+      name: "Patatas curly",
+      description:
+        "(Patatas crujientes con salsa de queso cheddar, pico de gallo y jalapenos)",
+      price: "8.90€",
+    },
+    {
+      name: "Bendita Locura",
+      description:
+        "(hummus, ternera, pollo crujiente, pulled pork, falafel y pan crujiente)",
+      price: "14.90€",
+    },
   ],
+  pitas: [
+    {
+      name: "El Pollon",
+      description:
+        "(pita rellena de pollo crujiente, ensalada americana, salsa picante de chile, maydesa de kimchi, sesamo negro y brotes verdes)",
+      price: "10.90€",
+    },
+    {
+      name: "La Carnosa",
+      description:
+        "(tiras de ternera con salsa especial, cebolla, tomate cherry nabo en escabeche, brotes verdes y sumac)",
+      price: "12.90€",
+    },
+    {
+      name: "La Toxica",
+      description:
+        "(carne de pulled pork, bacon, guacamole, pico de gallo jalapenos, brotes verdes, mayonesa de chipotle y salsa barbacoa)",
+      price: "13.90€",
+    },
+    {
+      name: "La Falafabulosa",
+      description:
+        "(falafel crujiente, brotes verdes, edamame, sumac, menta, pico de gallo, cebolla, tomate y salsa casera)",
+      price: "8.90€",
+    },
+    {
+      name: "La Dulce",
+      description:
+        "(pita rellena de Nutella, platano, fresa, trozos de chocolate crujiente, leche condensada y coco rallado)",
+      price: "7.90€",
+    },
+  ],
+
   sides: [
     { name: "Nachos con Guacamole", image: "/images/sides/nachos.jpeg" },
     { name: "Las Bravas", image: "/images/sides/bravas.jpeg" },

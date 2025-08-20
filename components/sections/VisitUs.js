@@ -153,8 +153,8 @@ const mapStyles = [
 
 // The specific location of Just Pita & Bar
 const mapCenter = {
-  lat: 41.374661,
-  lng: 2.167018,
+  lat: 41.38976637597941,
+  lng: 2.157948990864667,
 };
 
 const mapOptions = {

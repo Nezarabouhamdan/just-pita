@@ -15,18 +15,6 @@ const Title = styled.h2`
   margin-bottom: 5rem;
 `;
 
-const MenuGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 4rem 3.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-
-  @media (min-width: 900px) {
-    grid-template-columns: 1fr 1fr;
-  }
-`;
-
 const CategoryTitle = styled.h3`
   margin-bottom: 1.5rem;
   padding-bottom: 0.75rem;
@@ -83,6 +71,26 @@ const ItemDescription = styled.p`
   line-height: 1.5;
   grid-column: 1 / 2; // Span across the first column
 `;
+const SectionSeparator = styled.h3`
+  font-family: ${({ theme }) => theme.fonts.headings};
+  color: ${({ theme }) => theme.colors.primary};
+  text-align: center;
+  font-size: 2.5rem;
+  grid-column: 1 / -1; /* This makes it span all columns of the grid */
+  margin-top: 3rem;
+`;
+
+const MenuGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem 3.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+  }
+`;
 
 const MenuCategory = ({ title, items }) => (
   <div>
@@ -106,6 +114,11 @@ const Menu = () => (
   <Section id="menu">
     <Title>Our Menu</Title>
     <MenuGrid>
+      <MenuCategory title="Entrantes" items={menuData.entrantes} />
+      <MenuCategory title="Pitas" items={menuData.pitas} />
+
+      {/* NEW: Visual separator between Food and Drinks */}
+      <SectionSeparator>Drinks & Cocktails</SectionSeparator>
       <MenuCategory title="Cocktails" items={menuData.cocktails} />
       <MenuCategory title="Gin" items={menuData.gin} />
       <MenuCategory title="Rum" items={menuData.rum} />
