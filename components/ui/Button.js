@@ -26,7 +26,7 @@ const ButtonWrapper = styled.a`
 `;
 
 const WhatsAppButton = () => {
-  const phoneNumber = "YOUR_PHONE_NUMBER_HERE"; // Remember to update this
+  const phoneNumber = "‎+34 685 06 60 49"; // Remember to update this
 
   return (
     <ButtonWrapper

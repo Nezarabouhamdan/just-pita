@@ -201,7 +201,7 @@ const VisitUs = () => {
             <div>
               <h4>Contact</h4>
               <p>
-                <a href="tel:+34935418011">T. 935 41 80 11</a>
+                <a href="tel:‎+34 685 06 60 49">‎+34 685 06 60 49</a>
                 <br />
                 <a href="mailto:info@justpita.es">info@justpita.es</a>
               </p>

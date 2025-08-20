@@ -124,7 +124,7 @@ const Description = styled.div`
 // --- THE COMPONENT ---
 const VisitUs = () => {
   return (
-    <SectionContainer id="visit">
+    <SectionContainer id="about">
       {/* NOTE: I have swapped the order in the code. CSS (`order`) will handle the visual positioning. */}
       {/* This ensures the visual order is Image > Text on mobile. */}
 
