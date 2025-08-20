@@ -120,6 +120,16 @@ const Description = styled.div`
     color: ${({ theme }) => theme.colors.subtleText};
   }
 `;
+const DayGroup = styled.span`
+  font-weight: 700; /* Make the day group bold */
+`;
+
+const TimeEntry = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-left: 1rem; /* Indent the time entries */
+`;
 
 const VisitUs = () => {
   return (
