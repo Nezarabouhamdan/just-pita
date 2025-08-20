@@ -179,9 +179,9 @@ const VisitUs = () => {
             <div>
               <h4>Address</h4>
               <p>
-                Carrer de Blai, 22
+                Carrer d'Aribau, 86
                 <br />
-                08004 Barcelona, Spain
+                Barcelona, Spain
               </p>
             </div>
           </InfoCard>
@@ -203,7 +203,7 @@ const VisitUs = () => {
               <p>
                 <a href="tel:‎+34 685 06 60 49">‎+34 685 06 60 49</a>
                 <br />
-                <a href="mailto:info@justpita.es">info@justpita.es</a>
+                {/* <a href="mailto:info@justpita.es">info@justpita.es</a> */}
               </p>
             </div>
           </InfoCard>

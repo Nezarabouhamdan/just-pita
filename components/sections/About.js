@@ -124,10 +124,8 @@ const Description = styled.div`
 // --- THE COMPONENT ---
 const VisitUs = () => {
   return (
-    <SectionContainer id="about">
-      {/* NOTE: I have swapped the order in the code. CSS (`order`) will handle the visual positioning. */}
-      {/* This ensures the visual order is Image > Text on mobile. */}
-
+    // UPDATED ID from "about" to "visit" for correct navigation linking
+    <SectionContainer id="visit">
       <ImageSliderContainer>
         <Swiper
           modules={[Navigation, Autoplay, EffectFade]}
@@ -155,39 +153,56 @@ const VisitUs = () => {
 
       <InfoContainer>
         <InfoBlock>
+          {/* --- CONTENT UPDATED --- */}
           <Address>
-            <a href="#map" target="_blank" rel="noopener noreferrer">
-              Sant Joan, 56 - Barcelona
+            <a
+              href="https://maps.google.com/?q=Carrer+d'Aribau,+86,+L'Eixample,+08036+Barcelona,+Spain"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Carrer d'Aribau, 86 - Barcelona
             </a>
             <br />
-            T. 935 41 80 11
+            T. ‎+34 685 06 60 49
           </Address>
         </InfoBlock>
         <InfoBlock>
+          {/* --- CONTENT UPDATED --- */}
           <HoursGrid>
             <HoursRow>
-              <span>MONDAY - THURSDAY</span>
-              <span>1:00 PM - 4:00 PM & 8:00 PM - 11:00 PM</span>
+              <span>SUN–THU</span>
+              <span>12:00 – 02:30</span>
             </HoursRow>
             <HoursRow>
-              <span>FRIDAY - SATURDAY</span>
-              <span>1:00 PM - 4:00 PM & 8:00 PM - 11:30 PM</span>
-            </HoursRow>
-            <HoursRow>
-              <span>SUNDAY</span>
-              <span>1:00 PM - 4:00 PM & 8:00 PM - 11:00 PM</span>
+              <span>FRI–SAT</span>
+              <span>12:00 – 03:00</span>
             </HoursRow>
           </HoursGrid>
         </InfoBlock>
+
+        {/* The "WITHOUT RESERVE" block can be kept if it's still your policy */}
         <InfoBlock>
-          <span>WITHOUT RESERVE</span>
+          <span>About Us</span>
         </InfoBlock>
+
+        {/* --- "ABOUT US" CONTENT UPDATED --- */}
         <Description>
+          <h4>Every great bite tells a story...</h4>
           <p>
-            Sharing dishes and pitas inspired by the Mediterranean culinary
-            tradition...
+            Ours begins with a love for fresh ingredients, bold flavors, and a
+            passion for bringing people together. Tucked away in the vibrant
+            streets of Barcelona, we’ve created a place where you can slow down,
+            relax, and enjoy food that feels both comforting and exciting.
           </p>
-          <p>A cozy spot on Passeo San Juan in Barcelona...</p>
+          <p>
+            The experience doesn’t end with the food. Our bar is where the magic
+            continues—cocktails mixed with care, beers served ice-cold, and a
+            drinks menu designed for every mood. We’re here for the food lovers,
+            the cocktail seekers, and the weekend wanderers.
+          </p>
+          <p>
+            <strong>Come hungry. Leave happy.</strong>
+          </p>
         </Description>
       </InfoContainer>
     </SectionContainer>
