@@ -191,14 +191,14 @@ const VisitUs = () => {
           <p>
             Ours begins with a love for fresh ingredients, bold flavors, and a
             passion for bringing people together. Tucked away in the vibrant
-            streets of Barcelona, we’ve created a place where you can slow down,
-            relax, and enjoy food that feels both comforting and exciting.
+            streets of Barcelona, we have created a place where you can slow
+            down, relax, and enjoy food that feels both comforting and exciting.
           </p>
           <p>
-            The experience doesn’t end with the food. Our bar is where the magic
+            The experience doesnot end with the food. Our bar is where the magic
             continues—cocktails mixed with care, beers served ice-cold, and a
-            drinks menu designed for every mood. We’re here for the food lovers,
-            the cocktail seekers, and the weekend wanderers.
+            drinks menu designed for every mood. We are here for the food
+            lovers, the cocktail seekers, and the weekend wanderers.
           </p>
           <p>
             <strong>Come hungry. Leave happy.</strong>
