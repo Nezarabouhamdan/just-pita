@@ -54,11 +54,11 @@ const Footer = () => (
   <FooterContainer>
     <FooterContent>
       <FollowText>
-        FOLLOW US! <strong>@justpitabar</strong>
+        FOLLOW US! <strong>@justpitaandbar</strong>
       </FollowText>
       <SocialLinks>
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/justpitaandbar/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
@@ -72,14 +72,6 @@ const Footer = () => (
           aria-label="Facebook"
         >
           <FiFacebook />
-        </a>
-        <a
-          href="https://twitter.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Twitter"
-        >
-          <FiTwitter />
         </a>
       </SocialLinks>
     </FooterContent>

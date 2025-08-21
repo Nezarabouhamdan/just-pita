@@ -28,7 +28,7 @@ const slideData = [
     cta1: { text: "View The Food Menu", href: "#menu", primary: true },
     cta2: {
       text: "Order Takeaway",
-      href: "YOUR_DELIVERY_LINK",
+      href: "https://wa.me/+34685066049",
       target: "_blank",
     },
   },
@@ -50,7 +50,7 @@ const slideData = [
     cta1: { text: "Find Our Location", href: "#visit", primary: true },
     cta2: {
       text: "Follow Us",
-      href: "https://instagram.com/justpitabar",
+      href: "https://instagram.com/justpitaandbar",
       target: "_blank",
     },
   },

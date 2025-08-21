@@ -1,6 +1,4 @@
-// FILE: src/components/layout/Navbar.js
-// This is the complete, self-contained code for the Navbar component.
-
+// src/components/layout/Navbar.js
 "use client";
 import { useState } from "react";
 import styled from "styled-components";
@@ -9,7 +7,7 @@ import WhatsAppButton from "../ui/Button";
 import { FiMenu, FiX } from "react-icons/fi";
 import { NavDropdown, DropdownLink } from "./NavDropdown";
 
-// --- STYLED COMPONENTS (ALL DEFINED HERE) ---
+// --- STYLED COMPONENTS (NO CHANGES HERE) ---
 
 const NavWrapper = styled.header`
   position: fixed;
@@ -45,6 +43,7 @@ const NavContainer = styled.div`
 `;
 
 const LogoContainer = styled.a`
+  margin-top: 15px;
   grid-column: 1 / 2;
   justify-self: start;
 `;
@@ -77,7 +76,7 @@ const DesktopOnlyWrapper = styled.div`
 
 const NavLink = styled.a`
   font-family: ${({ theme }) => theme.fonts.body};
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   font-weight: 500;
   text-decoration: none;
   text-transform: uppercase;
@@ -116,7 +115,7 @@ const MobileMenuContainer = styled.div`
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   transform: ${({ $isOpen }) =>
     $isOpen ? "translateX(0)" : "translateX(100%)"};
-  z-index: 999; /* Below the header so the X button is clickable */
+  z-index: 999;
 
   a:not(.whatsapp-button) {
     font-size: 2.5rem;
@@ -135,39 +134,43 @@ const MobileMenuContainer = styled.div`
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const darkLogoSrc =
-    "https://i.ibb.co/qLFwrRF5/Chat-GPT-Image-Aug-13-2025-08-31-10-PM-removebg-preview.png"; // Make sure this file exists in public/images/
+    "https://i.ibb.co/qLFwrRF5/Chat-GPT-Image-Aug-13-2025-08-31-10-PM-removebg-preview.png";
 
   const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
   return (
     <>
       <NavWrapper>
         <NavContainer>
-          {/* Item 1: Logo (Left Column) */}
           <LogoContainer href="#">
             <Image
               src={darkLogoSrc}
               alt="Just Pita & Bar Logo"
-              width={130}
-              height={45}
+              width={100}
+              height={70}
               priority={true}
             />
           </LogoContainer>
 
-          {/* Item 2: Centered Links (Middle Column) */}
+          {/* Centered Links with Dropdowns */}
           <LinksContainer>
             <NavLink href="#">Home</NavLink>
-            <NavDropdown label="Our Pitas">
-              <DropdownLink href="#menu">La Falafabulosa</DropdownLink>
-              <DropdownLink href="#menu">La Toxica</DropdownLink>
-              <DropdownLink href="#menu">El Pollon</DropdownLink>
-              <DropdownLink href="#menu">See All Pitas</DropdownLink>
+            <NavDropdown label="Sandwiches">
+              <DropdownLink href="#entrantes">Entrantes</DropdownLink>
+              <DropdownLink href="#pitas">Pitas</DropdownLink>
+            </NavDropdown>
+            <NavDropdown label="Drinks">
+              <DropdownLink href="#cocktails">Cocktails</DropdownLink>
+              <DropdownLink href="#gin">Gin</DropdownLink>
+              <DropdownLink href="#rum">Rum</DropdownLink>
+              <DropdownLink href="#wiskey">Wiskey</DropdownLink>
+              <DropdownLink href="#shots">Shots</DropdownLink>
             </NavDropdown>
             <NavLink href="#about">About</NavLink>
             <NavLink href="#visit">Visit</NavLink>
           </LinksContainer>
 
-          {/* Item 3: Actions (Right Column) */}
           <ActionsContainer>
             <DesktopOnlyWrapper>
               <WhatsAppButton />
@@ -179,18 +182,22 @@ const Navbar = () => {
         </NavContainer>
       </NavWrapper>
 
-      {/* Fullscreen Mobile Menu (Controlled by state) */}
+      {/* Fullscreen Mobile Menu */}
       <MobileMenuContainer $isOpen={isOpen}>
-        <NavLink href="#" onClick={toggleMenu}>
+        <NavLink href="#" onClick={closeMenu}>
           Home
         </NavLink>
-        <NavLink href="#menu" onClick={toggleMenu}>
-          Menu
+        {/* For mobile, we link to the main sections for simplicity */}
+        <NavLink href="#entrantes" onClick={closeMenu}>
+          Sandwiches
         </NavLink>
-        <NavLink href="#about" onClick={toggleMenu}>
+        <NavLink href="#drinks" onClick={closeMenu}>
+          Drinks
+        </NavLink>
+        <NavLink href="#about" onClick={closeMenu}>
           About
         </NavLink>
-        <NavLink href="#visit" onClick={toggleMenu}>
+        <NavLink href="#visit" onClick={closeMenu}>
           Visit
         </NavLink>
         <WhatsAppButton className="whatsapp-button" />

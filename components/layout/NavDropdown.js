@@ -16,7 +16,7 @@ const DropdownLabel = styled.div`
   cursor: pointer;
   /* Uses the same styling as NavLink for consistency */
   font-family: ${({ theme }) => theme.fonts.body};
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   font-weight: 500;
   text-decoration: none;
   text-transform: uppercase;

@@ -5,7 +5,7 @@ import { menuData } from "@/data/menuData";
 
 const Section = styled.section`
   padding: 8rem 5%;
-  background-image: url("/images/parchment-texture.png"); // NEW: Add a subtle texture
+  background-image: url("/images/parchment-texture.png");
   background-size: cover;
   background-color: ${({ theme }) => theme.colors.white};
 `;
@@ -15,13 +15,17 @@ const Title = styled.h2`
   margin-bottom: 5rem;
 `;
 
+// NEW: A wrapper to handle the scroll offset for the fixed navbar
+const MenuCategoryWrapper = styled.div`
+  scroll-margin-top: 140px; /* Adjust this value to match your navbar's height */
+`;
+
 const CategoryTitle = styled.h3`
   margin-bottom: 1.5rem;
   padding-bottom: 0.75rem;
   position: relative;
   display: inline-block;
 
-  /* NEW: Decorative underline with classical feel */
   &::after {
     content: "";
     position: absolute;
@@ -45,7 +49,6 @@ const MenuItem = styled.div`
   }
 `;
 
-// ItemName and ItemDescription will be grouped
 const ItemDetails = styled.div``;
 
 const ItemName = styled.h4`
@@ -69,15 +72,16 @@ const ItemDescription = styled.p`
   color: ${({ theme }) => theme.colors.subtleText};
   font-weight: 400;
   line-height: 1.5;
-  grid-column: 1 / 2; // Span across the first column
+  grid-column: 1 / 2;
 `;
 const SectionSeparator = styled.h3`
   font-family: ${({ theme }) => theme.fonts.headings};
   color: ${({ theme }) => theme.colors.primary};
   text-align: center;
   font-size: 2.5rem;
-  grid-column: 1 / -1; /* This makes it span all columns of the grid */
+  grid-column: 1 / -1;
   margin-top: 3rem;
+  scroll-margin-top: 140px; /* Also apply the offset here */
 `;
 
 const MenuGrid = styled.div`
@@ -92,8 +96,8 @@ const MenuGrid = styled.div`
   }
 `;
 
-const MenuCategory = ({ title, items }) => (
-  <div>
+const MenuCategory = ({ id, title, items }) => (
+  <MenuCategoryWrapper id={id}>
     <CategoryTitle>{title}</CategoryTitle>
     {items.map((item) => (
       <MenuItem key={item.name}>
@@ -106,33 +110,53 @@ const MenuCategory = ({ title, items }) => (
         )}
       </MenuItem>
     ))}
-  </div>
+  </MenuCategoryWrapper>
 );
 
 const Menu = () => (
-  // Your Menu component JSX (no changes here)
   <Section id="menu">
     <Title>Our Menu</Title>
     <MenuGrid>
-      <MenuCategory title="Entrantes" items={menuData.entrantes} />
-      <MenuCategory title="Pitas" items={menuData.pitas} />
-
-      {/* NEW: Visual separator between Food and Drinks */}
-      <SectionSeparator>Drinks & Cocktails</SectionSeparator>
-      <MenuCategory title="Cocktails" items={menuData.cocktails} />
-      <MenuCategory title="Gin" items={menuData.gin} />
-      <MenuCategory title="Rum" items={menuData.rum} />
-      <MenuCategory title="Wiskey" items={menuData.wiskey} />
-      <MenuCategory title="Vodka" items={menuData.vodka} />
-      <MenuCategory title="Tequila" items={menuData.tequila} />
-      <MenuCategory title="Liquors & Digestifs" items={menuData.liquors} />
+      {/* Assigning unique IDs to each category for accurate scrolling */}
       <MenuCategory
+        id="entrantes"
+        title="Entrantes"
+        items={menuData.entrantes}
+      />
+      <MenuCategory id="pitas" title="Pitas" items={menuData.pitas} />
+
+      <SectionSeparator id="drinks">Drinks & Cocktails</SectionSeparator>
+      <MenuCategory
+        id="cocktails"
+        title="Cocktails"
+        items={menuData.cocktails}
+      />
+      <MenuCategory id="gin" title="Gin" items={menuData.gin} />
+      <MenuCategory id="rum" title="Rum" items={menuData.rum} />
+      <MenuCategory id="wiskey" title="Wiskey" items={menuData.wiskey} />
+      <MenuCategory id="vodka" title="Vodka" items={menuData.vodka} />
+      <MenuCategory id="tequila" title="Tequila" items={menuData.tequila} />
+      <MenuCategory
+        id="liquors"
+        title="Liquors & Digestifs"
+        items={menuData.liquors}
+      />
+      <MenuCategory
+        id="mocktails"
         title="Mocktails (Non-Alcoholic)"
         items={menuData.mocktails}
       />
-      <MenuCategory title="Beer & Wine" items={menuData.lowAlcohol} />
-      <MenuCategory title="Soft Drinks" items={menuData.softDrinks} />
-      <MenuCategory title="House Shots" items={menuData.shots} />
+      <MenuCategory
+        id="low-alcohol"
+        title="Beer & Wine"
+        items={menuData.lowAlcohol}
+      />
+      <MenuCategory
+        id="soft-drinks"
+        title="Soft Drinks"
+        items={menuData.softDrinks}
+      />
+      <MenuCategory id="shots" title="House Shots" items={menuData.shots} />
     </MenuGrid>
   </Section>
 );
