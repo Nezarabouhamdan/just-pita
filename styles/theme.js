@@ -1,7 +1,7 @@
 export const theme = {
   colors: {
     background: "#FDF8F0", // Sampled from your logo's background
-    primary: "#C86A41", // Sampled from your logo's text
+    primary: "#B75E26", // Sampled from your logo's text
     text: "#4E423F", // A dark, complementary brown for all text elements
     white: "#FFFFFF",
   },
