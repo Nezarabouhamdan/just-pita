@@ -9,7 +9,7 @@ const ButtonWrapper = styled.a`
   background-color: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.white};
   padding: 14px 28px;
-  border-radius: 50px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 700;
   font-size: 0.9rem;

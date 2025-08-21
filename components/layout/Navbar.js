@@ -7,27 +7,30 @@ import WhatsAppButton from "../ui/Button";
 import { FiMenu, FiX } from "react-icons/fi";
 import { NavDropdown, DropdownLink } from "./NavDropdown";
 
-// --- STYLED COMPONENTS (NO CHANGES HERE) ---
+// --- STYLED COMPONENTS ---
 
 const NavWrapper = styled.header`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1.5rem 5%;
+  // CHANGED: Reduced vertical padding for a shorter navbar
+  padding: 0.75rem 5%;
   z-index: 1000;
   display: flex;
   justify-content: center;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    padding: 1rem 5%;
+    // CHANGED: Reduced mobile padding
+    padding: 0.5rem 5%;
   }
 `;
 
 const NavContainer = styled.div`
   width: 100%;
   max-width: 1200px;
-  padding: 0.75rem 1rem 0.75rem 2rem;
+  // CHANGED: Reduced vertical padding
+  padding: 0.85rem 1rem 0.85rem 2rem;
 
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -37,15 +40,17 @@ const NavContainer = styled.div`
   background: rgba(240, 240, 240, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px); /* For Safari */
-  border-radius: 99px;
+  border-radius: 25px; // CHANGED: Rounded corners for a modern pill shape
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
 `;
 
 const LogoContainer = styled.a`
-  margin-top: 15px;
+  // REMOVED: margin-top: 15px; to allow the logo to sit vertically centered
   grid-column: 1 / 2;
   justify-self: start;
+  display: flex; // Helps with vertical alignment
+  align-items: center;
 `;
 
 const LinksContainer = styled.nav`
@@ -147,8 +152,9 @@ const Navbar = () => {
             <Image
               src={darkLogoSrc}
               alt="Just Pita & Bar Logo"
-              width={100}
-              height={70}
+              // CHANGED: Reduced logo size
+              width={75}
+              height={50}
               priority={true}
             />
           </LogoContainer>
@@ -187,7 +193,6 @@ const Navbar = () => {
         <NavLink href="#" onClick={closeMenu}>
           Home
         </NavLink>
-        {/* For mobile, we link to the main sections for simplicity */}
         <NavLink href="#entrantes" onClick={closeMenu}>
           Sandwiches
         </NavLink>

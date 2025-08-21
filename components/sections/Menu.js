@@ -15,9 +15,9 @@ const Title = styled.h2`
   margin-bottom: 5rem;
 `;
 
-// NEW: A wrapper to handle the scroll offset for the fixed navbar
 const MenuCategoryWrapper = styled.div`
-  scroll-margin-top: 140px; /* Adjust this value to match your navbar's height */
+  // CHANGED: Adjusted the offset to match the new shorter navbar
+  scroll-margin-top: 110px;
 `;
 
 const CategoryTitle = styled.h3`
@@ -81,7 +81,8 @@ const SectionSeparator = styled.h3`
   font-size: 2.5rem;
   grid-column: 1 / -1;
   margin-top: 3rem;
-  scroll-margin-top: 140px; /* Also apply the offset here */
+  // CHANGED: Adjusted the offset to match the new shorter navbar
+  scroll-margin-top: 110px;
 `;
 
 const MenuGrid = styled.div`
@@ -117,7 +118,6 @@ const Menu = () => (
   <Section id="menu">
     <Title>Our Menu</Title>
     <MenuGrid>
-      {/* Assigning unique IDs to each category for accurate scrolling */}
       <MenuCategory
         id="entrantes"
         title="Entrantes"
